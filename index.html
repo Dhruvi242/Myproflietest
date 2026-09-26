@@ -1,1 +1,668 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dhruvi Thakur | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0f14;
+            color: #e8edf3;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 20, 0.95);
+            border-bottom: 1px solid #252d36;
+        }
+
+        nav .container {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #7dd3fc;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aeb8c4;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #7dd3fc;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 20%,
+                rgba(56, 189, 248, 0.12),
+                transparent 30%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #293541;
+            border-radius: 20px;
+            color: #7dd3fc;
+            background: #111820;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(50px, 8vw, 90px);
+            line-height: 1;
+            letter-spacing: -4px;
+        }
+
+        h1 span {
+            color: #7dd3fc;
+        }
+
+        .hero-text {
+            margin-top: 25px;
+            color: #aeb8c4;
+            font-size: 18px;
+            max-width: 650px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid #33404d;
+            background: #151c24;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .primary {
+            background: #7dd3fc;
+            color: #071018;
+            border-color: #7dd3fc;
+        }
+
+        /* PROFILE CARD */
+
+        .profile-card {
+            background: #10161d;
+            border: 1px solid #26313d;
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            margin-bottom: 20px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 48px;
+            font-weight: bold;
+
+            color: #071018;
+            background: linear-gradient(
+                135deg,
+                #7dd3fc,
+                #a5b4fc
+            );
+        }
+
+        .profile-card h2 {
+            margin-bottom: 5px;
+        }
+
+        .muted {
+            color: #8793a1;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #8793a1;
+            margin-bottom: 35px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #10161d;
+            border: 1px solid #202b36;
+            border-radius: 18px;
+            padding: 25px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9da8b4;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 15px;
+            background: #151d26;
+            border: 1px solid #293541;
+            border-radius: 9px;
+            color: #c9d2dc;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #506273;
+        }
+
+        .number {
+            color: #7dd3fc;
+            font-weight: bold;
+        }
+
+        .project-card h3 {
+            margin: 8px 0;
+            font-size: 22px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: #0e141b;
+            border-top: 1px solid #202832;
+            border-bottom: 1px solid #202832;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: auto;
+            color: #9da8b4;
+        }
+
+        .contact .buttons {
+            justify-content: center;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #697583;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .hero-grid,
+            .about-grid,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .profile-card {
+                max-width: 400px;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container">
+
+            <a href="#home" class="logo">
+                D<span>T</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-grid">
+
+            <div>
+
+                <span class="tag">
+                    Computer Engineering • DSE Student
+                </span>
+
+                <h1>
+                    Hi, I'm <span>Dhruvi.</span>
+                </h1>
+
+                <p class="hero-text">
+                    A Computer Engineering student who enjoys learning
+                    software development, building practical projects,
+                    and exploring AI technologies.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn primary">
+                        View My Work
+                    </a>
+
+                    <a href="#contact" class="btn">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-card">
+
+                <div class="avatar">
+                    DT
+                </div>
+
+                <h2>Dhruvi Thakur</h2>
+
+                <p class="muted">
+                    Computer Engineering Student
+                </p>
+
+                <br>
+
+                <p class="muted">
+                    Mumbai, India
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <p class="section-subtitle">
+                A little about my journey and interests.
+            </p>
+
+
+            <div class="about-grid">
+
+                <div class="card">
+
+                    <h3>
+                        My Journey
+                    </h3>
+
+                    <p>
+                        I completed my Diploma in Computer Engineering
+                        and am now pursuing Direct Second Year Engineering.
+                        I am focused on strengthening my programming
+                        fundamentals and becoming a practical,
+                        industry-ready software engineer.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>
+                        What I Like
+                    </h3>
+
+                    <p>
+                        I enjoy coding, database development,
+                        web technologies, problem solving, AI,
+                        and building projects that turn ideas
+                        into useful applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Skills
+            </h2>
+
+            <p class="section-subtitle">
+                Technologies and concepts I am learning and using.
+            </p>
+
+
+            <div class="skills">
+
+                <span class="skill">C</span>
+                <span class="skill">Java</span>
+                <span class="skill">Python</span>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">SQL</span>
+                <span class="skill">DBMS</span>
+                <span class="skill">DSA</span>
+                <span class="skill">Next.js</span>
+                <span class="skill">Supabase</span>
+                <span class="skill">Git & GitHub</span>
+                <span class="skill">AI Tools</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Projects
+            </h2>
+
+            <p class="section-subtitle">
+                Some of the projects I have worked on.
+            </p>
+
+
+            <div class="projects">
+
+
+                <div class="card project-card">
+
+                    <span class="number">
+                        01
+                    </span>
+
+                    <h3>
+                        PrepAI
+                    </h3>
+
+                    <p>
+                        An AI-powered placement preparation and
+                        simulation platform with aptitude practice,
+                        technical preparation, HR questions,
+                        performance tracking and chatbot support.
+                    </p>
+
+                </div>
+
+
+                <div class="card project-card">
+
+                    <span class="number">
+                        02
+                    </span>
+
+                    <h3>
+                        Car Rental Management
+                    </h3>
+
+                    <p>
+                        A DBMS project designed to manage customers,
+                        cars, car types, rentals, payments and
+                        related rental-management operations using SQL.
+                    </p>
+
+                </div>
+
+
+                <div class="card project-card">
+
+                    <span class="number">
+                        03
+                    </span>
+
+                    <h3>
+                        DSA Practice
+                    </h3>
+
+                    <p>
+                        Implementation and study of arrays, searching,
+                        sorting, linked lists, stacks, queues,
+                        recursion and binary search trees.
+                    </p>
+
+                </div>
+
+
+                <div class="card project-card">
+
+                    <span class="number">
+                        04
+                    </span>
+
+                    <h3>
+                        AI & Learning Projects
+                    </h3>
+
+                    <p>
+                        Academic exploration of AI tools, TensorFlow
+                        applications, programming assistance and
+                        practical uses of AI in education and
+                        software development.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Let's Connect
+            </h2>
+
+            <p>
+                Interested in technology, software development,
+                AI and building meaningful projects.
+            </p>
+
+
+            <div class="buttons">
+
+                <!-- Change this email -->
+                <a
+                    href="mailto:your-email@example.com"
+                    class="btn primary">
+                    Email Me
+                </a>
+
+                <!-- Add your GitHub link -->
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    class="btn">
+                    GitHub
+                </a>
+
+                <!-- Add your LinkedIn link -->
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="btn">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Dhruvi Thakur • Built with HTML & CSS
+    </footer>
+
+</body>
+</html>
